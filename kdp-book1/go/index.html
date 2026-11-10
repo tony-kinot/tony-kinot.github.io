@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Amazon の本のページへ移動します</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Z38XKSNY5"></script>
+<script>
+// 置き場所（案）: tony-kinot.github.io/kdp-book1/go/index.html
+// 使い方: https://tony-kinot.github.io/kdp-book1/go/?from=qiita のように from を付けて貼る。
+// from は決めた語だけを通し、それ以外は other にする（URL に余計な文字を持ち込ませない）。
+var DEST = 'https://www.amazon.co.jp/dp/B0HQF3J9TF';
+var ALLOWED = ['zenn', 'qiita', 'booth', 'zennbook', 'advent', 'github', 'other'];
+var from = (new URLSearchParams(location.search).get('from') || 'other').toLowerCase();
+if (ALLOWED.indexOf(from) < 0) { from = 'other'; }
+var moved = false;
+function go() { if (!moved) { moved = true; location.replace(DEST); } }
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-0Z38XKSNY5', {anonymize_ip: true, send_page_view: false});
+gtag('event', 'book_link_click', {link_from: from, event_callback: go, event_timeout: 800});
+// 計測が止められている環境でも必ず移動する
+setTimeout(go, 900);
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=https://www.amazon.co.jp/dp/B0HQF3J9TF"></noscript>
+<style>
+  body{font-family:system-ui,-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;max-width:40rem;margin:3rem auto;padding:0 1rem;line-height:1.8;color:#222;background:#fff}
+</style>
+</head>
+<body>
+<p>Amazon の本のページへ移動します。移動しないときは、次のリンクを押してください。</p>
+<p><a href="https://www.amazon.co.jp/dp/B0HQF3J9TF" rel="noreferrer">『AIエージェントに仕事を任せる前に知っておきたい、実際に起きた事故と防ぎ方』（Kindle・680円）</a></p>
+</body>
+</html>
