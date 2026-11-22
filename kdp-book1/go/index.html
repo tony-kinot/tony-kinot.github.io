@@ -5,14 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <meta name="referrer" content="no-referrer">
-<title>Amazon の本のページへ移動します</title>
+<title>『AIエージェントに仕事を任せる前に知っておきたい、実際に起きた事故と防ぎ方』のAmazonページへ移動します</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Z38XKSNY5"></script>
 <script>
 // 置き場所（案）: tony-kinot.github.io/kdp-book1/go/index.html
+// v0.2（2026-11-17）：記事の冒頭に置く案内を末尾と分けて数えるため qiita_top・zenn_top・booth_top を足した。
 // 使い方: https://tony-kinot.github.io/kdp-book1/go/?from=qiita のように from を付けて貼る。
 // from は決めた語だけを通し、それ以外は other にする（URL に余計な文字を持ち込ませない）。
 var DEST = 'https://www.amazon.co.jp/dp/B0HQF3J9TF';
-var ALLOWED = ['zenn', 'qiita', 'booth', 'zennbook', 'advent', 'github', 'other'];
+var ALLOWED = ['zenn', 'qiita', 'booth', 'zennbook', 'advent', 'github', 'qiita_top', 'zenn_top', 'booth_top', 'other'];
 var from = (new URLSearchParams(location.search).get('from') || 'other').toLowerCase();
 if (ALLOWED.indexOf(from) < 0) { from = 'other'; }
 var moved = false;
@@ -31,7 +32,7 @@ setTimeout(go, 900);
 </style>
 </head>
 <body>
-<p>Amazon の本のページへ移動します。移動しないときは、次のリンクを押してください。</p>
+<p>『AIエージェントに仕事を任せる前に知っておきたい、実際に起きた事故と防ぎ方』の Amazon 商品ページへ移動します。移動しないときは、次の書名を押してください。</p>
 <p><a href="https://www.amazon.co.jp/dp/B0HQF3J9TF" rel="noreferrer">『AIエージェントに仕事を任せる前に知っておきたい、実際に起きた事故と防ぎ方』（Kindle・680円）</a></p>
 </body>
 </html>
