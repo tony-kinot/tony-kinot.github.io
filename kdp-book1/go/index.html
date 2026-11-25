@@ -10,10 +10,11 @@
 <script>
 // 置き場所（案）: tony-kinot.github.io/kdp-book1/go/index.html
 // v0.2（2026-11-17）：記事の冒頭に置く案内を末尾と分けて数えるため qiita_top・zenn_top・booth_top を足した。
+// v0.3（2026-11-25）：本の章の実例から書いた記事の、本文の山場の後に置く案内を分けて数えるため qiita_ch を足した。
 // 使い方: https://tony-kinot.github.io/kdp-book1/go/?from=qiita のように from を付けて貼る。
 // from は決めた語だけを通し、それ以外は other にする（URL に余計な文字を持ち込ませない）。
 var DEST = 'https://www.amazon.co.jp/dp/B0HQF3J9TF';
-var ALLOWED = ['zenn', 'qiita', 'booth', 'zennbook', 'advent', 'github', 'qiita_top', 'zenn_top', 'booth_top', 'other'];
+var ALLOWED = ['zenn', 'qiita', 'booth', 'zennbook', 'advent', 'github', 'qiita_top', 'zenn_top', 'booth_top', 'qiita_ch', 'other'];
 var from = (new URLSearchParams(location.search).get('from') || 'other').toLowerCase();
 if (ALLOWED.indexOf(from) < 0) { from = 'other'; }
 var moved = false;
